@@ -12,8 +12,7 @@ class ElixirLs < Formula
   end
 
   def install
-    # Ensure Hex is installed
-    system "mix", "archive.install", resource("hex")
+    system "mix", "archive.install", resource("hex").fetch
 
     system "mix", "deps.get"
     system "mix", "compile"
